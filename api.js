@@ -14,7 +14,7 @@ const api = express();
 api.use(express.json())
 
 api.use(cors({
-  origin: process.env.PUERTO, // Cambia si tu frontend está en otro dominio o puerto
+  origin: process.env.FRONTEND, // Cambia si tu frontend está en otro dominio o puerto
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
