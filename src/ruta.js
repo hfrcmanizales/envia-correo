@@ -3,9 +3,7 @@ import { Resend } from 'resend';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('🚀 ¡Servidor funcionando correctamente en Railway!');
-});
+
 
 
 // Ruta POST para enviar correo
