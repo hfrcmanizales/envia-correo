@@ -7,6 +7,12 @@ const router = express.Router();
 
 
 // Ruta POST para enviar correo
+router.get("/",(req,res)=>{
+  res.send("hola")
+})  
+
+
+
 router.post('/envia', async (req, res) => {
   const { name, email, message } = req.body;
 
