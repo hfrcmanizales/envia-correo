@@ -20,6 +20,6 @@ api.use(cors({
 }));
 
 api.use("/", router);
-
+api.use(router)
 
 export default api;
