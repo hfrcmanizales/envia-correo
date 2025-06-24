@@ -18,8 +18,8 @@ api.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
-api.use(router)
 
+api.use("/", router);
 
 
 export default api;
