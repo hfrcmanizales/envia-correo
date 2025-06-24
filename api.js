@@ -14,7 +14,7 @@ const api = express();
 api.use(express.json())
 
 api.use(cors({
-  origin: process.env.FRONTEND||"http://localhost:5173/contacto", // Cambia si tu frontend está en otro dominio o puerto
+  origin: [process.env.FRONTEND,"http://localhost:5173/contacto"], // Cambia si tu frontend está en otro dominio o puerto
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
