@@ -13,7 +13,7 @@ dotenv.config()
 const api = express();
 api.use(express.json())
 
-const allowedOrigins = ['http://localhost:5173/', 'https://tu-frontend.com'];
+const allowedOrigins = ['http://localhost:5173/contacto', 'https://tu-frontend.com'];
 
 api.use(cors({
   origin: (origin, callback) => {
