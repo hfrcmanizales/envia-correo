@@ -13,13 +13,20 @@ dotenv.config()
 const api = express();
 api.use(express.json())
 
+const allowedOrigins = ['http://localhost:5173/', 'https://tu-frontend.com'];
+
 api.use(cors({
-  origin: [process.env.FRONTEND,"http://localhost:5173/contacto"], // Cambia si tu frontend está en otro dominio o puerto
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  origin: (origin, callback) => {
+    // Si no hay origen (como en apps móviles o curl), se permite
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('No permitido por CORS'));
+    }
+  }
 }));
 
-api.use("/", router);
-api.use(router)
+api.use(router);
+
 
 export default api;
