@@ -11,22 +11,26 @@ dotenv.config()
 
 
 const api = express();
-api.use(express.json())
 
-const allowedOrigins = ['http://localhost:5173/contacto', 'https://tu-frontend.com'];
+const allowedOrigins = ['http://localhost:5173'];
 
-api.use(cors({
-  origin: (origin, callback) => {
-    // Si no hay origen (como en apps móviles o curl), se permite
+
+app.use(cors({
+  origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
-      return callback(null, true);
+      callback(null, true);
     } else {
-      return callback(new Error('No permitido por CORS'));
+      callback(new Error('No permitido por CORS'));
     }
-  }
+  },
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
 }));
 
-api.use(router);
+api.use(express.json())
+
+api.use("/",router);
 
 
 export default api;
