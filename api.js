@@ -12,7 +12,7 @@ dotenv.config()
 
 const api = express();
 
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['http://localhost:5173','https://tatu-blme.onrender.com/contact'];
 
 
 api.use(cors({
