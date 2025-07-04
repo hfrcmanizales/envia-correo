@@ -12,7 +12,7 @@ dotenv.config()
 
 const api = express();
 
-const allowedOrigins = ['http://localhost:5173','https://tatu-blme.onrender.com/contact','https://tatu-blme.onrender.com','https://portafolio-4g2g.vercel.app/'];
+const allowedOrigins = ['http://localhost:5173','https://tatu-blme.onrender.com/contact','https://tatu-blme.onrender.com','https://portafolio-4g2g.vercel.app','https://portafolio-4g2g.vercel.app/contact'];
 
 
 api.use(cors({
